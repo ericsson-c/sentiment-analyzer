@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="loader.css">
     <title>SentimentAnalyzer - Stream</title>
 </head>
 <body>
@@ -38,8 +39,12 @@
             </form>
                 
             <div class="change">
-                Tired of this topic? Just type in a new one.<!-- <button>Click here to change it.</button> -->
+                Tired of this topic? Just type in a new one.
+                <!-- <button>Click here to change it.</button> -->
             </div>
+
+            <div id="loader-div"><span class="loader"></span><p>Loading tweets...</p></div>
+
             <span class="button">
                 <button id="start">Start Stream</button>
                 <button id="end">End Stream</button>
@@ -49,8 +54,16 @@
             <div class="chart">
                 <canvas id='chart' width="200" height="200"></canvas>
             </div>
+            <div class="display-tweets">
+                <div>
+                    <p class="init">This is to display tweets as they come in.</p>
+                </div>
+            </div> 
         </div>
+
         
+        
+     <!--
         <div class="input">
             <form id="new-topic-rule">
                 <div>
@@ -76,6 +89,8 @@
                 </div>
             </form>
         </div>  
+    -->
+
         <div class="questionnaire-div">
             <form id="questionnaire">
                 <div>
@@ -117,6 +132,8 @@
                 </div>
             </form>
         </div>
+        
+        
         <footer>
             &copy; Ericsson Colborn 2022
         </footer>

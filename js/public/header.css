@@ -1,5 +1,7 @@
 body {
     background-color: aliceblue;
+    min-width: 300px;
+    min-height: 300px;
 }
 
 header a {
@@ -48,7 +50,7 @@ header div {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     padding-bottom: 20px;
 }

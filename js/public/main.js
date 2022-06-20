@@ -78,7 +78,7 @@ function main() {
         // reload page
         setTimeout(() => {
             window.location.reload();
-        }, 500);
+        }, 1000);
         
     });
 
@@ -120,7 +120,17 @@ function main() {
       
         chart.data.datasets[0].data = [data.numPositive, data.numNegative];
         chart.update();
-        console.log(data.tweet);
+
+        // console.log(data.tweet);
+
+        if (document.querySelector('.display-tweets .init')) {
+            const p = document.querySelector('.display-tweets .init');
+            p.parentElement.removeChild(p);
+        }
+
+        const p = document.createElement('p');
+        p.textContent = data.tweet;
+        document.querySelector('.display-tweets div').appendChild(p);
     
     });
 
@@ -129,26 +139,33 @@ function main() {
     startBtn.addEventListener('click', (e) => {
 
         sock.emit('start');
-        startBtn.style.display = 'none';
-        endBtn.style.display = 'inline-block';
+        document.getElementById('loader-div').style.display = 'flex';
+        startBtn.style.backgroundColor = 'yellow';
+
+        //startBtn.style.display = 'none';
+        //endBtn.style.display = 'inline-block';
         
     });
 
     endBtn.addEventListener('click', (e) => {
 
         sock.emit('end');
-        endBtn.style.display = 'none';
-        startBtn.style.display = 'inline-block';
+        document.getElementById('loader-div').style.display = 'none';
+        startBtn.style.backgroundColor = 'buttonface';
+
+        //endBtn.style.display = 'none';
+        //startBtn.style.display = 'inline-block';
 
     });
 
     document.getElementById('clear').addEventListener('click', (e) => {
 
         // reset donut chart to 50/50
-        chart.data.datasets[0].data = [1, 1];
-        chart.update();
+        // chart.data.datasets[0].data = [1, 1];
+        //chart.update();
 
         // emit reset event to reset server data as well
         sock.emit('reset');
+        window.location.reload();
     });
 }

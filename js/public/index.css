@@ -21,6 +21,7 @@
     width: 40vw; 
     display: flex;
     flex-direction: row;
+    min-height: 300px;
 }
 
 .input {
@@ -157,5 +158,25 @@ input::placeholder {
 }
 
 #end {
-    display: none;
+    display: inline-block;
+}
+
+
+.display-tweets {
+    width: 90%;
+    height: auto;
+    max-height: 30vh;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    border: 3px solid black;
+
+    margin-bottom: calc(30vw + -90px);
+    bottom: min(-30vw + 150px);
+
+}
+.display-tweets div {
+    
+    padding: 10px;
+    background-color: lightgray;
 }

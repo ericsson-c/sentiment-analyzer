@@ -111,13 +111,12 @@ consumer.on('ready', () => {
     consumer.consume();
 })
 
-// ---------- WEBSOCKET SERVER SETUP ---------- \\
+// ---------------------------- WEBSOCKET SERVER SETUP ------------------------------- \\
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 app.use(express.static('public'));
-app.set('view engine', 'hbs');
 
 var numPositive = 0;
 var numNegative = 0;
