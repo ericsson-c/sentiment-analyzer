@@ -4,7 +4,7 @@ Welcome to SentimentAnalyzer, a web-based tool hooked directly up to the Twitter
 
 Give SentimentAnalyzer a topic – preferably a polarizing one – and it will display, in real time, the percentage of tweets coming in that are saying **good things** about that topics versus those that are saying **bad things** about it.
 
-If you want to see the tweets that are being analyzed, inspect element on your browser and open the console.
+Tweets are displayed as they come in at the bottom of the page.
 
 
 ## Overview:
