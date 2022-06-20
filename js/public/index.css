@@ -1,0 +1,161 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.chart {
+    position: relative;
+    height: 40vh;
+    width: 40vw; 
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.input div {
+    padding: 40px;
+    display: none;
+    background-color: lightgray;
+    width: 30vw;
+    /*height: calc(25vw * 1.2);*/
+    min-width: 100px;
+    min-height: 150px;
+    position: relative;
+    z-index: 2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.questionnaire-div {
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.questionnaire-div div {
+    padding: 40px;
+    display: none;
+    background-color: lightgray;
+    /*width: 35vw;*/
+    /*height: calc(25vw * 1.2);*/
+    min-width: 100px;
+    min-height: 150px;
+    position: relative;
+    z-index: 2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+#questionnaire input::placeholder {
+    color: gray !important;
+    
+}
+
+#questionnaire input[type="text"] {
+    padding: 5px;
+    background-color: white;
+    min-width: 150px;
+    margin-bottom: 5px;
+}
+
+#questionnaire .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#questionnaire .btn button {
+    margin: 5px
+}
+
+
+
+#qBtn {
+    border: none;
+    background-color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    padding: none;
+    
+}
+
+#qBtn:hover {
+    color: white;
+}
+
+
+.change button{
+    border: none;
+    background-color: inherit;
+    font: inherit
+}
+
+.change button:hover {
+    color: #00acee;
+}
+
+.change {
+    padding-bottom: 20px;
+}
+
+input {
+    border: none;
+    background-color: inherit;
+    font: inherit;
+    font-size: inherit;
+}
+
+.rule {
+    border: 1px solid black;
+    background-color: white;
+    padding: 5px;
+    width: 22vw
+}
+
+input::placeholder {
+    color: black;
+}
+
+.button {
+    padding-bottom: 20px;
+}
+
+.button button:hover {
+    background-color: #FF6384;;
+}
+
+.form-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.form-btn button {
+    margin: 10px;
+}
+
+#end {
+    display: none;
+}
