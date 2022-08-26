@@ -4,7 +4,7 @@ Welcome to SentimentAnalyzer, a web-based tool hooked directly up to the Twitter
 
 Give SentimentAnalyzer a topic – preferably a polarizing one – and it will display, in real time, the percentage of tweets coming in that are saying **good things** about that topics versus those that are saying **bad things** about it.
 
-If you want to see the tweets that are being analyzed, inspect element on your browser and open the console.
+Tweets are displayed as they come in at the bottom of the page.
 
 
 ## Overview:
@@ -19,7 +19,7 @@ Twitter API -> Kafka topic -> BayesClassifier -> Separate Kafka topic -> Server 
 * Node.js 16.13.2
 * Python 3.9
 
-The Node.js web server was created using express and [socket.io](https://socket.io/docs/v4/). This enables two-way, realtime communuication betwee the client and server. Since Kafka and the Twitter API also used WebSocket, there is essentially realtime communication between all 4 components.
+The Node.js web server was created using express and [socket.io](https://socket.io/docs/v4/). This enables two-way, realtime communuication between the client and server.
 
 Tweets are classified as *Positive* or *Negative* using the Naive Bayes Classifier from the [nltk](https://www.nltk.org/_modules/nltk/classify/naivebayes.html) package in python.
 
