@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="loader.css">
+    <title>SentimentAnalyzer - Stream</title>
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-scale@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="main.js" defer></script>
+
+    <header>
+        <a href="/">
+        <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" height="80px"/>
+        </a>
+        <div>
+            <a href="/">
+            <h2>SentimentAnalyzer</h2>
+            </a>
+        </div>
+        <nav>  
+            <a href="/"> Stream</a>
+            <a href="/about.html">About</a>
+            <a href="/author.html">Author</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+
+            <form id="new-topic-name">
+                <h1>What do people think about <i><input type="text" value=""></i>?</h1>
+            </form>
+                
+            <div class="change">
+                Tired of this topic? Just type in a new one.
+                <!-- <button>Click here to change it.</button> -->
+            </div>
+
+            <div id="loader-div"><span class="loader"></span><p>Loading tweets...</p></div>
+
+            <span class="button">
+                <button id="start">Start Stream</button>
+                <button id="end">End Stream</button>
+                <button id="clear">Reset Chart</button>
+            </span>
+            
+            <div class="chart">
+                <canvas id='chart' width="200" height="200"></canvas>
+            </div>
+            <div class="display-tweets">
+                <div>
+                    <p class="init">This is to display tweets as they come in.</p>
+                </div>
+            </div> 
+        </div>
+
+        
+        
+     <!--
+        <div class="input">
+            <form id="new-topic-rule">
+                <div>
+                    <p>Your new topic of choice is: <i></i></p>
+                    <p>In order to get the most accurate search results possible,
+                        we ask that you create a new <b>streaming rule</b>
+                        based on your topic. Click for more info on
+                        <a href="https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/integrate/build-a-rule">how to build a rule.</a>
+                    </p>
+                    <p>(it's a piece of cake, don't worry)</p>
+
+                    <input type="text" class="rule">
+
+                    <p>Alternatively, you can answer this quick <button type="button" id="qBtn">questionnaire</button>
+                        so we can hone in on your topic.</p>
+
+                    <p class="questionnaire-prompt">Or, if patience isn't your strong suit, click the button below to get all tweets containing the phrase "<b></b>".</p>
+                    
+                    <span class="form-btn">
+                        <button type="button" id="impatient">Start Streaming</button>
+                        <button id="back">Back to Home</button>
+                    </span> 
+                </div>
+            </form>
+        </div>  
+    -->
+
+        <div class="questionnaire-div">
+            <form id="questionnaire">
+                <div>
+                    <b><p>You new topic is: "REPL"</p></b>
+                    <p>Tell us more about your topic:</p>
+                    <!-- <p>(for the examples, suppose your topic is "masks")</p> -->
+                    <p>Any other terms we should search for in addition to "REPL"?</p>
+                    <input type="text" placeholder="i.e covid" name="and"> 
+                    <br>Search for tweets containing "REPL" AND "____"
+                    <p>Any other related terms we could substitute for "REPL"?</p>
+                    <input type="text" placeholder="i.e covid" name="or">
+                    <br>Search for tweets containing "REPL" OR "____"
+                    <p>Any hashtags we should search for?</p>
+                    <input type="text" placeholder="i.e #covidsucks" name="hashtags">
+                    <p><i>Only</i> pull tweets with one of these hashtags?</p>
+                    <span>
+                        <input type="radio" id="hashAnd" name="onlyHashtags" value="YES">
+                        <label for="hashAnd">Yes</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="hashOr" name="onlyHashtags" value="NO">
+                        <label for="hashOr">No</label>
+                    </span>
+                    <p>Any specific users we should search for?</p>
+                    <input type="text" placeholder="i.e @NIH" name="users">
+                    <p><i>Only</i> pull tweets from these users?</p>
+                    <span>
+                        <input type="radio" id="userYes" name="onlyUsers" value="YES">
+                        <label for="userYes">Yes</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="userNo" name="onlyUsers" value="NO">
+                        <label for="userNo">No</label>
+                    </span>
+                    <span class="btn">
+                        <button type="submit">Submit</button>
+                        <button type="button">Back</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+        
+        <!--
+        <footer>
+            &copy; Ericsson Colborn 2022
+        </footer>
+        -->
+    </div>
+</body>
