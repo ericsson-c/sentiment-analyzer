@@ -9,15 +9,41 @@ Tweets are displayed as they come in at the bottom of the page.
 
 ## Overview:
 
-### TL;DR:
-
-Twitter API -> Kafka topic -> BayesClassifier -> Separate Kafka topic -> Server -> Client.
-
 ### Technologies used:
 
 * Apache Kafka 3.2 with Zookeeper 3.8
 * Node.js 16.13.2
 * Python 3.9
+
+
+### How to Run / System Requirements
+
+Requirements:
+* Docker (v20.10)
+* Docker-compose (v1.29)
+* npm (8.1.2)
+* Python (3.9.7)
+
+Open two terminals, one to spin up a Kafka cluster and the other to run the python/node apps in parallel.
+
+In the first terminal, from the root directory, enter the following command:
+
+    docker-compose up
+
+This will spin up a Kafka cluster using the [bitnami images](https://bitnami.com/stack/kafka) for Kafka and Zookeeper.
+
+Once Kafka and Zookeeper are up and running, in the second terminal (again from the root directory), enter the following command:
+
+    npm run dev
+    
+This will run the python script as a background thread and start up the Express app.
+
+
+## How It Works
+
+### TL;DR:
+
+Twitter API -> Kafka topic -> BayesClassifier -> Separate Kafka topic -> Server -> Client.
 
 The Node.js web server was created using express and [socket.io](https://socket.io/docs/v4/). This enables two-way, realtime communication between the client and server.
 
