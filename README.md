@@ -1,6 +1,6 @@
 # Sentiment Analyzer #
 
-Welcome to SentimentAnalyzer, a web-based tool hooked directly up to the Twitter API to bring you what people are thinking, right now.
+Welcome to SentimentAnalyzer, a webpage hooked directly up to the Twitter API to bring you what people are thinking, right now.
 
 Give SentimentAnalyzer a topic – preferably a polarizing one – and it will display, in real time, the percentage of tweets coming in that are saying **good things** about that topics versus those that are saying **bad things** about it.
 
