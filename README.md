@@ -24,9 +24,9 @@ Requirements:
 * npm (8.1.2)
 * Python (3.9.7)
 
-Open two terminals, one to spin up a Kafka cluster and the other to run the python/node apps in parallel.
+Clone this project. From the root directory, launch two terminals.
 
-In the first terminal, from the root directory, enter the following command:
+Start Docker, either from the command line or the Desktop app (I prefer the Desktop app). Then, in the first terminal, enter the following command:
 
     docker-compose up
 
